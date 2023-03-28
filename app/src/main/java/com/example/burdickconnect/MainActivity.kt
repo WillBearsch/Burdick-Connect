@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.burdickconnect.ui.theme.BurdickConnectTheme
+import com.example.burdickconnect.ui.theme.MainScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,22 +23,17 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Connect")
+                    MainScreen()
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Burdick $name!")
-}
-
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     BurdickConnectTheme {
-        Greeting("Connect")
+        MainScreen()
     }
 }
