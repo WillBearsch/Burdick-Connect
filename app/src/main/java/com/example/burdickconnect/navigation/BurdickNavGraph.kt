@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.composable
 import com.example.burdickconnect.fitnessResources
+import com.example.burdickconnect.locker
 
 
 @Composable
@@ -23,8 +24,8 @@ fun BurdickNavGraph(
             fitnessResources(
                 link = {},)
         }
-        composable(Routes.test.route){
-
+        composable(Routes.locker.route){
+            locker()
         }
     }
 }
