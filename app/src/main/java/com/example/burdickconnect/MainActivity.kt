@@ -1,6 +1,6 @@
 package com.example.burdickconnect
 
-// test commit #2
+// # Sample push
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
