@@ -30,7 +30,7 @@ fun BurdickNavGraph(
             locker()
         }
         composable(Routes.loginScreen.route) {
-            loginScreen()
+            loginScreen(navController)
         }
     }
 }

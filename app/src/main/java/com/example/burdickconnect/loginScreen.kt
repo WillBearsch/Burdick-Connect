@@ -13,17 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import navigation.Routes
 
 @Composable
-fun loginScreen() {
-//    Box(
-//        contentAlignment = Alignment.Center,
-//    ){
-//        Column()
-//        {
-//            Text("User Log-In", modifier = Modifier.weight(1.0f))
-//        }
-//    }
+fun loginScreen(nav: NavHostController) {
 
     val username_information: MutableState<String> = remember { mutableStateOf("") }
     val password_information: MutableState<String> = remember { mutableStateOf("") }
@@ -77,7 +72,10 @@ fun loginScreen() {
         }
 
         // TODO: Add navigation instructions for the onClick() event
-        Button(onClick = {}, modifier = Modifier.padding(16.dp).height(40.dp)) {
+
+        Button(onClick = { nav.navigate(Routes.locker.route) { launchSingleTop = true } }, modifier = Modifier
+            .padding(16.dp)
+            .height(40.dp)) {
             Text(text = "Submit")
         }
 
