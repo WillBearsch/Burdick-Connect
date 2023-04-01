@@ -1,5 +1,7 @@
 package navigation
 
+import androidx.compose.material.Button
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHost
@@ -27,7 +29,15 @@ fun BurdickNavGraph(
                 link = {},)
         }
         composable(Routes.locker.route){
-            locker()
+            locker(
+            isReserved = false,
+            onReservedChanged = { isReserved -> },
+            isLocked = false,
+            onLockedChanged = { isLocked -> },
+         )
+            Button(onClick = { navController.popBackStack() }) {
+                Text(text = "Back")
+            }
         }
         composable(Routes.loginScreen.route) {
             loginScreen(navController)
