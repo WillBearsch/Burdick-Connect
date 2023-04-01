@@ -27,7 +27,10 @@ fun BurdickNavGraph(
                 link = {},)
         }
         composable(Routes.locker.route){
-            locker()
+            locker(
+            isReserved = false,
+            onReservedChanged = { isReserved -> }
+         )
         }
         composable(Routes.loginScreen.route) {
             loginScreen()
