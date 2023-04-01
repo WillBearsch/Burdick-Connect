@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.composable
 import com.example.burdickconnect.fitnessResources
 import com.example.burdickconnect.locker
+import com.example.burdickconnect.loginScreen
 
 
 @Composable
@@ -18,7 +19,8 @@ fun BurdickNavGraph(
 
     NavHost(
         navController = navController,
-        startDestination = Routes.fitnessResources.route // TODO - 6. Set the startDestination to the SongList route
+//        startDestination = Routes.fitnessResources.route
+        startDestination = Routes.loginScreen.route
     ) {
         composable(Routes.fitnessResources.route){
             fitnessResources(
@@ -26,6 +28,9 @@ fun BurdickNavGraph(
         }
         composable(Routes.locker.route){
             locker()
+        }
+        composable(Routes.loginScreen.route) {
+            loginScreen()
         }
     }
 }
