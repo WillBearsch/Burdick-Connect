@@ -15,7 +15,9 @@ import androidx.compose.ui.unit.sp
 fun locker(
 
     isReserved: Boolean = false,
-    onReservedChanged: (Boolean) -> Unit
+    isLocked : Boolean = false,
+    onReservedChanged: (Boolean) -> Unit,
+    onLockedChanged: (Boolean) -> Unit
 ){
     Box(
         contentAlignment = Alignment.Center,
@@ -33,6 +35,20 @@ fun locker(
                         modifier = Modifier.padding(24.dp))
                 } else {
                     Text("Reserve",
+                        fontSize = 30.sp,
+                        modifier = Modifier.padding(24.dp))
+                }
+            }
+            Button(
+                onClick = { onLockedChanged(!isLocked) },
+                enabled = isReserved && !isLocked
+            ) {
+                if (isLocked) {
+                    Text("Locked",
+                        fontSize = 30.sp,
+                        modifier = Modifier.padding(24.dp))
+                } else {
+                    Text("Lock",
                         fontSize = 30.sp,
                         modifier = Modifier.padding(24.dp))
                 }
