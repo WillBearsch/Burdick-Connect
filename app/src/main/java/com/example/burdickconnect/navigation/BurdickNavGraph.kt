@@ -12,6 +12,7 @@ import androidx.navigation.compose.composable
 import com.example.burdickconnect.fitnessResources
 import com.example.burdickconnect.locker
 import com.example.burdickconnect.loginScreen
+import com.example.burdickconnect.welcomeScreen
 
 
 @Composable
@@ -41,6 +42,9 @@ fun BurdickNavGraph(
         }
         composable(Routes.loginScreen.route) {
             loginScreen(navController)
+        }
+        composable(Routes.welcomeScreen.route) {
+            welcomeScreen(navController)
         }
     }
 }

@@ -73,7 +73,7 @@ fun loginScreen(nav: NavHostController) {
 
         // TODO: Add navigation instructions for the onClick() event
 
-        Button(onClick = { nav.navigate(Routes.locker.route) { launchSingleTop = true } }, modifier = Modifier
+        Button(onClick = { nav.navigate(Routes.welcomeScreen.route) { launchSingleTop = true } }, modifier = Modifier
             .padding(16.dp)
             .height(40.dp)) {
             Text(text = "Submit")
