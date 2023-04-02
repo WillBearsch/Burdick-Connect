@@ -1,8 +1,6 @@
 package com.example.burdickconnect
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -21,36 +19,44 @@ fun locker(
 ){
     Box(
         contentAlignment = Alignment.Center,
+        modifier = Modifier.fillMaxSize()
     ){
-        Column()
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+        )
         {
-            Text("Locker", modifier = Modifier.weight(1.0f))
+            Text("Reserve a locker",
+                fontSize = 40.sp,
+                modifier = Modifier.padding(48.dp))
             Button(
                 onClick = { onReservedChanged(!isReserved) },
-                enabled = !isReserved
+                enabled = !isReserved,
+                modifier = Modifier.padding(16.dp)
             ) {
                 if (isReserved) {
                     Text("Reserved",
-                        fontSize = 30.sp,
+                        fontSize = 40.sp,
                         modifier = Modifier.padding(24.dp))
                 } else {
                     Text("Reserve",
-                        fontSize = 30.sp,
+                        fontSize = 40.sp,
                         modifier = Modifier.padding(24.dp))
                 }
             }
             Button(
                 onClick = { onLockedChanged(!isLocked) },
-                enabled = isReserved && !isLocked
+                enabled = isReserved && !isLocked,
+                modifier = Modifier.padding(16.dp)
             ) {
                 if (isLocked) {
                     Text("Locked",
                         fontSize = 30.sp,
-                        modifier = Modifier.padding(24.dp))
+                        modifier = Modifier.padding(16.dp))
                 } else {
                     Text("Lock",
                         fontSize = 30.sp,
-                        modifier = Modifier.padding(24.dp))
+                        modifier = Modifier.padding(16.dp))
                 }
             }
         }
